@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="growbot">
+
+  <xacro:property name="body_len" value="0.4" />
+  <xacro:property name="body_width" value="0.4" />
+  <xacro:property name="body_height" value="0.3" />
+  <xacro:property name="wheel_diam" value="0.2" />
+  <xacro:property name="wheel_width" value="0.05" />
+  <xacro:property name="wheel_x_offset" value="0.17" />
+  <xacro:property name="wheel_y_offset" value="0.25" />
+  <xacro:property name="wheel_z_offset" value="-0.17" />
+  <xacro:property name="mass" value="7" />
+
+  <material name="silver">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+    <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+    <material name="yellow">
+    <color rgba="1 1 0 1"/>
+  </material>
+
+
+    <xacro:include filename="$(find growbot_simulations)/urdf/wheel.xacro" />
+    <xacro:include filename="$(find growbot_simulations)/urdf/camera.xacro" />
+
+  <!-- dummy link and joint added to fix inertial error per [https://answers.ros.org/question/192817/error-msg-the-root-link_base-has-an-inertia-specified-in-the-urdf-but-kdl/] -->
+  <link name="dummy">
+  </link>
+    
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="${body_len} ${body_width} ${body_height}"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${body_len} ${body_width} ${body_height}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="${mass}"/>
+            <!-- https://en.wikipedia.org/wiki/List_of_moments_of_inertia#List_of_3D_inertia_tensors
+      :
+            [ixx] [ixy] [ixz]
+            ixy  [iyy] [iyz]
+            ixz   iyz  [izz]
+      
+            We only need to specify these as it is symetrical matrix
+            -->
+            <!--TODO: Make this an equation to calcultae it out -->
+            <inertia ixx="0.145833333" ixy="0.0" ixz="0.0" iyy="0.186666667" iyz="0.0" izz="0.145833333"/>
+        </inertial>
+    </link>
+
+      <!-- dummy link and joint added to fix inertial error per [https://answers.ros.org/question/192817/error-msg-the-root-link_base-has-an-inertia-specified-in-the-urdf-but-kdl/] -->
+  <joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="base_link"/>
+  </joint>
+    
+  <xacro:wheel prefix="front_right" x_offset="${wheel_x_offset}" y_offset="${wheel_y_offset}" z_offset="${wheel_z_offset}" width="${wheel_width}" radius="${wheel_diam/2}" y_reflect="-1" />
+  <xacro:wheel prefix="front_left" x_offset="${wheel_x_offset}" y_offset="${wheel_y_offset}" z_offset="${wheel_z_offset}" width="${wheel_width}" radius="${wheel_diam/2}" y_reflect="1" />
+  <xacro:wheel prefix="back_right" x_offset="${-wheel_x_offset}" y_offset="${wheel_y_offset}" z_offset="${wheel_z_offset}" width="${wheel_width}" radius="${wheel_diam/2}" y_reflect="-1" />
+  <xacro:wheel prefix="back_left"  x_offset="${-wheel_x_offset}" y_offset="${wheel_y_offset}" z_offset="${wheel_z_offset}" width="${wheel_width}" radius="${wheel_diam/2}" y_reflect="1" />
+<xacro:camera />
+    
+    <!-- Add ROS plugin so we can interact with our robot -->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
