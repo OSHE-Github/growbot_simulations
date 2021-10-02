@@ -1,31 +1,30 @@
-# Winter Break growbot_simulations
+# growbot_simulations
 
-- Slides can be found [here](https://docs.google.com/presentation/d/13XCDx3GYOWQLYuZl6OiorKB5LQHKp4tY2wDdE2C2mO4/edit#slide=id.p).
 - The urdf portion is based on this [ROS tutorial](https://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
 - The publisher portion is based on this [ROS tutorial](https://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29)
 
 ## Prerequisites
-- have ubuntu and ROS installed
+- have Ubuntu 20.04 and ROS Noetic installed
 
 ## Cloning the repo
-From home directory create /catkin_ws/src folder and run the following command
+Create `~/catkin_ws/src` and run the following commands
 ```
-mkdir -p catkin_ws/src
-cd catkin_ws/src
-git clone https://github.com/utra-robosoccer/Tutorials-2020.git
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone https://github.com/OSHE-Github/growbot_simulations.git
 ```
 
 ## Updating Dependencies
 ```
-cd ~/catkin_ws/
+cd ~/catkin_ws
 rosdep update
-rosdep install --from-paths src --ignore-src -r -y --rosdistro melodic
+rosdep install --from-paths src --ignore-src -r -y --rosdistro noetic
 ```
 
 ## Installing Controllers For Robot
 ```
 sudo apt-get update
-sudo apt-get install ros-melodic-ros-controllers
+sudo apt-get install ros-noetic-ros-controllers
 ```
 
 
@@ -34,31 +33,12 @@ First build the project and source the setup file so that the system knows where
 ```
 cd ~/catkin_ws
 catkin build tutorial
-source devel/setup.bash
+source devel/setup.bash # Or: source devel/setup.zsh if using zsh
 ```
 
 ## Launch the robot
 ```
-roslaunch tutorial gazebo.launch
-```
-
-
-## Commands used during tutorial
-useful tip: press tab to auto-complete words as you type commands
-Open a new terminal to run commands for the robot
-
-```
-cd ~/catkin_ws
-source devel/setup.bash
-```
-To run the main node run this command
-```
-rosrun tutorial my_publisher
-```
-
-To send a command to the left arm
-```
-rostopic pub /left_arm_controller/command std_msgs/Float64 "data: 1.0"
+roslaunch growbot_simulations gazebo.launch
 ```
 
 To see the ROS node tree run this command
