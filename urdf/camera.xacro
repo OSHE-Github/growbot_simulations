@@ -7,23 +7,23 @@
     <!-- Camera -->
   <link name="camera_link">
     <collision>
-            <origin rpy="0 0 0" xyz="0 0 -0.15"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+    <box size="${camera_link} ${camera_link*2} ${camera_link}"/>
       </geometry>
     </collision>
 
     <visual>
-            <origin rpy="0 0 0" xyz="0 0 -0.15"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+    <box size="${camera_link} ${camera_link*2} ${camera_link}"/>
       </geometry>
       <material name="black"/>
     </visual>
 
     <inertial>
       <mass value="1e-5" />
-            <origin rpy="0 0 0" xyz="0 0 -0.15"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
   </link>
@@ -33,7 +33,7 @@
         <axis xyz="0 0 1"/>  <!-- changes axis of rotation -->
         <parent link="base_link"/>
         <child link="camera_link"/>
-        <origin rpy="0 0 0" xyz="0 0 0.3"/> <!-- moves the child_frame with respect to parent_frame -->
+        <origin rpy="0 0 0" xyz="0.15 0 ${camera_link/2 + 0.15}"/> <!-- moves the child_frame with respect to parent_frame -->
         <limit effort="30" velocity="1.0"/>
     </joint>
 
