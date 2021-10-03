@@ -25,6 +25,7 @@
 
     <xacro:include filename="$(find growbot_simulations)/urdf/wheel.xacro" />
     <xacro:include filename="$(find growbot_simulations)/urdf/camera.xacro" />
+    <xacro:include filename="$(find growbot_simulations)/urdf/plugins.xacro" />
 
   <!-- dummy link and joint added to fix inertial error per [https://answers.ros.org/question/192817/error-msg-the-root-link_base-has-an-inertia-specified-in-the-urdf-but-kdl/] -->
   <link name="dummy">
@@ -69,10 +70,4 @@
   <xacro:wheel prefix="back_left"  x_offset="${-wheel_x_offset}" y_offset="${wheel_y_offset}" z_offset="${wheel_z_offset}" width="${wheel_width}" radius="${wheel_diam/2}" y_reflect="1" />
 <xacro:camera />
     
-    <!-- Add ROS plugin so we can interact with our robot -->
-    <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/</robotNamespace>
-        </plugin>
-    </gazebo>
 </robot>
