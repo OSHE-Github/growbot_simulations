@@ -2,7 +2,7 @@
 
 - The urdf portion is based on this [ROS tutorial](https://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
 - The publisher portion is based on this [ROS tutorial](https://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29)
-- The heightmap for the gazebo world was created from following this [OpenRobotics video](https://vimeo.com/58409707)
+- The heightmap for the gazebo world was created from following this [Open Robotics video](https://vimeo.com/58409707)
 
 ## Install `growbot-simulations` on Ubuntu 20.04
 
@@ -15,8 +15,11 @@
 ```sh
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-git clone git@github.com:OSHE-Github/growbot_simulations.git
+git clone git@github.com:OSHE-Github/growbot_simulations
 ```
+
+If you do not intend to contribute code to the github
+you can clone with HTTPS instead `git clone https://github.com/OSHE-Github/growbot_simulations.git`
 
 ### Update ROS Dependencies
 
