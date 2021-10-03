@@ -4,7 +4,7 @@
 - The publisher portion is based on this [ROS tutorial](https://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29)
 - The heightmap for the gazebo world was created from following this [Open Robotics video](https://vimeo.com/58409707)
 
-## Install `growbot-simulations` on Ubuntu 20.04
+## Install `growbot_simulations` on Ubuntu 20.04
 
 ### Prerequisites
 
