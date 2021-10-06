@@ -11,14 +11,32 @@ Visualization Manager:
     - Alpha: 0.8
       Class: rviz/RobotModel
       Enabled: true
-      Name: my_robot
+      Name: Growbot
       Robot Description: robot_description
       Value: true
     - Class: rviz/TF
       Name: TF
       Value: false
+    - Class: rviz/Camera
+      Enabled: true
+      Image Rendering: background and overlay
+      Image Topic: /growbot/camera0/image_raw
+      Name: Camera
+      Overlay Alpha: 0.5
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+      Visibility:
+        Grid: true
+        Marker: true
+        Path: true
+        RobotModel: true
+        TF: true
+        Value: true
+      Zoom Factor: 1
   Global Options:
-    Fixed Frame: base_link
+    Fixed Frame: chassis_link
     Frame Rate: 30
   Name: root
   Tools:

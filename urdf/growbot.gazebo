@@ -1,3 +1,7 @@
+<?xml version='1.0'?>
+
+<robot>
+
   <!-- camera -->
   <gazebo reference="camera_link">
     <sensor type="camera" name="camera1">
@@ -25,7 +29,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>growbot/camera1</cameraName>
+        <cameraName>growbot/camera0</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link</frameName>
@@ -38,3 +42,41 @@
       </plugin>
     </sensor>
   </gazebo>
+  
+      <gazebo reference="front_left_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+    <gazebo reference="front_right_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+    <gazebo reference="back_left_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+    <gazebo reference="back_right_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+      <gazebo reference="camera_link">
+      <material>
+        Gazebo/Black
+      </material>
+  </gazebo> 
+  
+        <gazebo reference="chassis_link">
+      <material>
+        Gazebo/Silver
+      </material>
+  </gazebo> 
+  
+</robot>
