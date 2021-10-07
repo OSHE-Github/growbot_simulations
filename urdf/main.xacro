@@ -76,7 +76,7 @@
     <!-- Add ROS plugin so we can interact with our robot -->
   <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-          <!--<robotNamespace>/growbot</robotNamespace>-->
+          <robotNamespace>/</robotNamespace>
       </plugin>
   </gazebo>
     
