@@ -11,7 +11,7 @@ Visualization Manager:
     - Alpha: 0.8
       Class: rviz/RobotModel
       Enabled: true
-      Name: Growbot
+      Name: growbot
       Robot Description: robot_description
       Value: true
     - Class: rviz/TF

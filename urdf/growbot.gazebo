@@ -1,10 +1,9 @@
-<?xml version='1.0'?>
-
-<robot>
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="growbot">
 
   <!-- camera -->
   <gazebo reference="camera_link">
-    <sensor type="camera" name="camera1">
+    <sensor type="camera" name="camera">
       <update_rate>30.0</update_rate>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
@@ -77,6 +76,6 @@
       <material>
         Gazebo/Silver
       </material>
-  </gazebo> 
+  </gazebo>
   
 </robot>

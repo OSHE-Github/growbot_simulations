@@ -35,10 +35,12 @@
   <rosparam command="load"
             file="$(find growbot_simulations)/config/joints.yaml" />
   
+<!--ns="/growbot"-->
   <!-- Spawn controllers -->
-  <node name="bot_controller_spawner"
+  <node name="controller_spawner"
         pkg="controller_manager"
-        type="spawner"
+        type="spawner" respawn="false"
+
         args="joint_state_controller
               front_left_wheel_controller
               front_right_wheel_controller

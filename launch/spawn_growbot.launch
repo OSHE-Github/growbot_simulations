@@ -7,6 +7,6 @@
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find growbot_simulations)/urdf/main.xacro" />
 
   <!-- Spawn Growbot -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-	      args="-urdf -model growbot -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	      args="-unpause -urdf -model growbot -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
 </launch>
