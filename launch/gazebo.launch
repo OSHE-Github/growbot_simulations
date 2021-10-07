@@ -24,7 +24,7 @@
         type="spawn_model"
         respawn="false"
         output="screen"
-        args="-z 1.0
+        args="-x 5 -y 0 -Y 0
               -unpause
               -urdf
               -model growbot

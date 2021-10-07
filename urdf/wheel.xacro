@@ -45,8 +45,5 @@
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
     </transmission>
-
-
 </xacro:macro>
 </robot>
-
