@@ -1,3 +1,7 @@
+<?xml version="1.0"?>
+<robot>
+
+  
   <!-- camera -->
   <gazebo reference="camera_link">
     <sensor type="camera" name="camera1">
@@ -38,3 +42,40 @@
       </plugin>
     </sensor>
   </gazebo>
+      <gazebo reference="front_left_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+    <gazebo reference="front_right_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+    <gazebo reference="back_left_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+    <gazebo reference="back_right_wheel">
+      <material>
+        Gazebo/Yellow
+      </material>
+  </gazebo> 
+  
+      <gazebo reference="camera_link">
+      <material>
+        Gazebo/Black
+      </material>
+  </gazebo> 
+  
+        <gazebo reference="base_link">
+      <material>
+        Gazebo/Silver
+      </material>
+  </gazebo>
+
+  </robot>

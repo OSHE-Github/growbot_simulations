@@ -5,6 +5,7 @@
     <xacro:include filename="$(find growbot_simulations)/urdf/wheel.xacro" />
     <xacro:include filename="$(find growbot_simulations)/urdf/camera.xacro" />
     <xacro:include filename="$(find growbot_simulations)/urdf/plugins.xacro" />
+    <xacro:include filename="$(find growbot_simulations)/urdf/growbot.gazebo" />
 
   <material name="silver">
     <color rgba="0.5 0.5 0.5 1"/>

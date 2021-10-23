@@ -7,7 +7,7 @@
         <geometry>
           <heightmap>
             <uri>model://heightmap/materials/textures/heightmap.png</uri>
-            <size>32 32 1</size>
+            <size>16 16 1</size>
             <pos>0 0 0</pos>
           </heightmap>
         </geometry>
@@ -40,7 +40,7 @@
               <fade_dist>0.5</fade_dist>
             </blend>
             <uri>model://heightmap/materials/textures/heightmap.png</uri>
-            <size>32 32 1</size>
+            <size>16 16 1</size>
             <pos>0 0 0</pos>
           </heightmap>
         </geometry>

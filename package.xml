@@ -15,6 +15,7 @@
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend><!-- ? Do i need this?-->
   <exec_depend>rqt_robot_steering</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>xacro</exec_depend>

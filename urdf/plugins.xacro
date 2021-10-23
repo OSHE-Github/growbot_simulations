@@ -10,7 +10,7 @@
 
   <!--Gazebo Camera Plugin-->
    <gazebo reference="camera">
-    <sensor type="camera" name="camera">
+    <sensor type="camera" name="camera2">
       <update_rate>30.0</update_rate>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
@@ -35,7 +35,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>/growbot/camera</cameraName>
+        <cameraName>/growbot/camera2</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera</frameName>

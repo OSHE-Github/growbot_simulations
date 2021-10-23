@@ -30,6 +30,11 @@
       <ambient>0.4 0.4 0.4 1</ambient>
       <background>0.7 0.7 0.7 1</background>
       <shadows>1</shadows>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
     </scene>
     <wind/>
     <spherical_coordinates>
@@ -46,7 +51,7 @@
           <geometry>
             <heightmap>
               <uri>model://heightmap/materials/textures/heightmap.png</uri>
-              <size>32 32 1</size>
+              <size>16 16 1</size>
               <pos>0 0 0</pos>
               <texture>
                 <size>10</size>
@@ -101,7 +106,7 @@
                 <fade_dist>0.5</fade_dist>
               </blend>
               <uri>model://heightmap/materials/textures/heightmap.png</uri>
-              <size>32 32 1</size>
+              <size>16 16 1</size>
               <pos>0 0 0</pos>
             </heightmap>
           </geometry>
