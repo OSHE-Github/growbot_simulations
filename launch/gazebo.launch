@@ -25,7 +25,6 @@
         respawn="false"
         output="screen"
         args="-x 5 -y 0 -Y 0
-              -unpause
               -urdf
               -model growbot
               -param robot_description"/>
@@ -39,8 +38,7 @@
   <!-- Spawn controllers -->
   <node name="controller_spawner"
         pkg="controller_manager"
-        type="spawner" respawn="false"
-
+        type="spawner"
         args="joint_state_controller
               front_left_wheel_controller
               front_right_wheel_controller
