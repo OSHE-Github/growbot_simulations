@@ -42,9 +42,9 @@
    </link>
 
 
-    <joint name="base_to_camera" type="continuous">
+    <joint name="chassis_to_camera" type="continuous">
         <axis xyz="0 0 1"/>  <!-- changes axis of rotation -->
-        <parent link="base_link"/>
+        <parent link="chassis_link"/>
         <child link="camera_link"/>
         <origin rpy="0 0 0" xyz="0.15 0 ${camera_link/2 + 0.15}"/> <!-- moves the child_frame with respect to parent_frame -->
         <limit effort="30" velocity="1.0"/>
@@ -56,7 +56,7 @@
         <actuator name="$camera_motor">
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-        <joint name="base_to_camera">
+        <joint name="chassis_to_camera">
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
     </transmission>

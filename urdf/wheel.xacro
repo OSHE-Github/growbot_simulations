@@ -27,9 +27,9 @@
     </link>
 
 
-    <joint name="base_to_${prefix}_wheel" type="continuous">
+    <joint name="chassis_to_${prefix}_wheel" type="continuous">
         <axis xyz="0 1 0"/>
-        <parent link="base_link"/>
+        <parent link="chassis_link"/>
         <child link="${prefix}_wheel"/>
         <origin rpy="0 0 0" xyz="${x_offset} ${y_reflect*y_offset} ${z_offset}"/> <!-- move the child_frame with respect to parent_frame -->
         <limit effort="30" velocity="10"/>
@@ -41,7 +41,7 @@
         <actuator name="$${prefix}_motor">
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-        <joint name="base_to_${prefix}_wheel">
+        <joint name="chassis_to_${prefix}_wheel">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
     </transmission>

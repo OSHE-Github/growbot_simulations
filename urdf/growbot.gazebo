@@ -72,7 +72,7 @@
       </material>
   </gazebo> 
   
-        <gazebo reference="base_link">
+        <gazebo reference="chassis_link">
       <material>
         Gazebo/Silver
       </material>
