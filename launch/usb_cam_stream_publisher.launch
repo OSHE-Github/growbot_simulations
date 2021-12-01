@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 <arg name="video_device" default="/dev/video0" />
 <arg name="image_width" default="640" />

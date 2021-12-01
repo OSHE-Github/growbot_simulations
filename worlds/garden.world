@@ -51,7 +51,7 @@
           <geometry>
             <heightmap>
               <uri>model://heightmap/materials/textures/heightmap.png</uri>
-              <size>16 16 1</size>
+              <size>32 32 1</size>
               <pos>0 0 0</pos>
               <texture>
                 <size>10</size>
@@ -78,7 +78,7 @@
             </friction>
           </surface>
         </collision>
-        <visual name='visual_abcedf'>
+        <visual name='visual_garden'>
           <geometry>
             <heightmap>
               <use_terrain_paging>0</use_terrain_paging>
@@ -106,7 +106,7 @@
                 <fade_dist>0.5</fade_dist>
               </blend>
               <uri>model://heightmap/materials/textures/heightmap.png</uri>
-              <size>16 16 1</size>
+              <size>32 32 1</size>
               <pos>0 0 0</pos>
             </heightmap>
           </geometry>
@@ -115,18 +115,18 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>1.53043 -1.54637 0 0 -0 0</pose>
+      <pose>0.700691 -0.66162 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>122 529000000</sim_time>
-      <real_time>122 721925173</real_time>
-      <wall_time>1633205176 520891554</wall_time>
-      <iterations>122529</iterations>
+      <sim_time>40 46000000</sim_time>
+      <real_time>40 131723625</real_time>
+      <wall_time>1638232081 279385807</wall_time>
+      <iterations>40046</iterations>
       <model name='heightmap'>
-        <pose>1.53043 -1.54637 0 0 -0 0</pose>
+        <pose>0.700691 -0.66162 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.53043 -1.54637 0 0 -0 0</pose>
+          <pose>0.700691 -0.66162 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -138,7 +138,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>13.336 -25.9512 21.3324 0 0.843459 2.2002</pose>
+        <pose>4.20655 -3.91212 29.7457 -1e-06 1.53546 2.35619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
