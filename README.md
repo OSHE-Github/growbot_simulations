@@ -97,8 +97,10 @@ rqt_graph
 
 ### Drive the robot around
 
+~~`roslaunch growbot_simulations nc_teleop.launch`~~ This command is broken, so use this instead:
+
 ```sh
-roslaunch growbot_simulations nc_teleop.launch
+python3 ~/catkin_ws/src/growbot_simulations/nc_teleop.py
 ```
 
 ### Launch the ArUco marker detection node
