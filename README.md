@@ -18,8 +18,7 @@ cd ~/catkin_ws/src
 git clone git@github.com:OSHE-Github/growbot_simulations
 ```
 
-If you do not intend to contribute code to the github
-you can clone with HTTPS instead `git clone https://github.com/OSHE-Github/growbot_simulations.git`
+If you do not intend to contribute code you can clone with HTTPS instead `git clone https://github.com/OSHE-Github/growbot_simulations.git`
 
 ### Update ROS Dependencies
 
@@ -36,6 +35,12 @@ sudo apt-get update
 sudo apt-get install ros-noetic-ros-controllers
 ```
 
+### Get the `aruco_ros` dependency
+
+```sh
+cd ~/catkin_ws/src
+git clone https://github.com/pal-robotics/aruco_ros.git
+```
 
 ### Compile `growbot_simulations` source code
 
@@ -47,6 +52,15 @@ catkin_make
 source devel/setup.bash
 ```
 
+### One last install step, copy this repo's models to `~/.gazebo/models`
+
+This will have to be run every time you update a model in
+`~/catkin_ws/src/growbot_simulations/models/`
+
+```sh
+cp -r ~/catkin_ws/src/growbot_simulations/models ~/.gazebo/models
+```
+
 ## Running the simulations
 
 Again, every new terminal opened needs to first source the setup.bash file before any of the following commands will work.
@@ -56,13 +70,20 @@ cd ~/catkin_ws
 source devel/setup.bash
 ```
 
-### Launch the Gazebo simulation for the Growbot
+If you do not want to have to type this every time you open a new termainal window, you can add `source
+~/catkin_ws/devel/setup.bash` to your `~/.bashrc`:
+
+```sh
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+```
+
+### Launch the main Gazebo simulation for the Growbot
 
 ```sh
 roslaunch growbot_simulations gazebo.launch
 ```
 
-### Launch rviz to see robot model and sensor data
+### Launch `rviz` to only see robot model and sensor data
 
 ```sh
 roslaunch growbot_simulations rviz.launch
@@ -72,4 +93,28 @@ roslaunch growbot_simulations rviz.launch
  
 ```sh
 rqt_graph
+```
+
+### Drive the robot around
+
+```sh
+roslaunch growbot_simulations nc_teleop.launch
+```
+
+### Launch the ArUco marker detection node
+
+```sh
+roslaunch growbot_simulations aruco_marker_finder_gazebo.launch
+```
+
+### View the ArUco detectors results
+
+```sh
+rosrun image_view image_view image:=/aruco_single/result
+```
+
+### View just the robot's webcam
+
+```sh
+rosrun image_view image_view image:=/growbot/camera1/image_raw
 ```

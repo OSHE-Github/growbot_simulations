@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+<node name="nc_teleop" pkg="growbot_simulations" type="nc_teleop.py"/>
+</launch>
