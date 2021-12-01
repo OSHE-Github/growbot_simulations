@@ -1,8 +1,10 @@
 # Growbot Simulations
 
-- The urdf portion is based on this [ROS tutorial](https://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
+- The urdfs are based on this [ROS tutorial](https://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
 - The publisher portion is based on this [ROS tutorial](https://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29)
 - The heightmap for the gazebo world was created from following this [Open Robotics video](https://vimeo.com/58409707)
+- Quick ArUco tags came from [chev.me/arucogen](https://chev.me/arucogen/)
+- ArUco maker models for Gazebo came from [github.com/joselusl/aruco_gazebo](https://github.com/joselusl/aruco_gazebo)
 
 ## Install `growbot_simulations` on Ubuntu 20.04
 
