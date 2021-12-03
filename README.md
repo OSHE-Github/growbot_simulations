@@ -56,7 +56,13 @@ source devel/setup.bash
 
 ### One last install step, copy this repo's models to `~/.gazebo/models`
 
-This will have to be run every time you update a model in
+This folder does not exist until gazebo has been launched at least one time. So fisrt install make sure to run and close gazebo.
+
+```sh
+gazebo
+```
+
+Now this next snippet will have to be run every time you update a model in
 `~/catkin_ws/src/growbot_simulations/models/`
 
 ```sh
