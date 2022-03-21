@@ -1,0 +1,8 @@
+prefix=/home/david/growbot_simulations/devel
+
+Name: send_test
+Description: Description of send_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

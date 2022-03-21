@@ -1,0 +1,8 @@
+prefix=/home/david/growbot_simulations/devel
+
+Name: receive_test
+Description: Description of receive_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
