@@ -49,46 +49,10 @@ git clone https://github.com/pal-robotics/aruco_ros.git
 First build the project and source the setup file so that the system knows where to look for your build files (i.e. If you do not run the source command in your terminal none of the roslaunch commands will work)
 
 ```sh
+sudo apt-get install python3-catkin-tools
 cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
-```
-
-### One last install step, copy this repo's models to `~/.gazebo/models`
-
-This folder does not exist until gazebo has been launched at least one time. So fisrt install make sure to run and close gazebo.
-
-```sh
-gazebo
-```
-
-Now this next snippet will have to be run every time you update a model in
-`~/catkin_ws/src/growbot_simulations/models/`
-
-```sh
-cp -r ~/catkin_ws/src/growbot_simulations/models ~/.gazebo/models
-```
-
-## Running the simulations
-
-Again, every new terminal opened needs to first source the setup.bash file before any of the following commands will work.
-
-```sh
-cd ~/catkin_ws
-source devel/setup.bash
-```
-
-If you do not want to have to type this every time you open a new termainal window, you can add `source
-~/catkin_ws/devel/setup.bash` to your `~/.bashrc`:
-
-```sh
-echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-```
-
-### Launch the main Gazebo simulation for the Growbot
-
-```sh
-roslaunch growbot_simulations gazebo.launch
 ```
 
 ### Launch `rviz` to only see robot model and sensor data
@@ -103,28 +67,4 @@ roslaunch growbot_simulations rviz.launch
 rqt_graph
 ```
 
-### Drive the robot around
 
-~~`roslaunch growbot_simulations nc_teleop.launch`~~ This command is broken, so use this instead:
-
-```sh
-python3 ~/catkin_ws/src/growbot_simulations/nc_teleop.py
-```
-
-### Launch the ArUco marker detection node
-
-```sh
-roslaunch growbot_simulations aruco_marker_finder_gazebo.launch
-```
-
-### View the ArUco detectors results
-
-```sh
-rosrun image_view image_view image:=/aruco_single/result
-```
-
-### View just the robot's webcam
-
-```sh
-rosrun image_view image_view image:=/growbot/camera1/image_raw
-```
