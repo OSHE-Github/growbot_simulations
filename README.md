@@ -68,7 +68,7 @@ rqt_graph
 ```
 
 ### TODO
-- [  ] Add ROS Serial Instructions and example
-- [  ] Add ROS Subscriber Instructions 
-- [  ] Add ROS Publisher Instructions 
+- [ ] Add ROS Serial Instructions and example
+- [ ] Add ROS Subscriber Instructions 
+- [ ] Add ROS Publisher Instructions 
 
