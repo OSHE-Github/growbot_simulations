@@ -17,7 +17,7 @@
 ```sh
 git clone git@github.com:OSHE-Github/growbot_simulations
 ```
-`If you are having issues cloning this with the above command, make sure your ssh key is added to your account`
+If you are having issues cloning this with the above command, make sure your ssh key is added to your account.
 
 If you do not intend to contribute code you can clone with HTTPS instead `git clone https://github.com/OSHE-Github/growbot_simulations.git`
 
