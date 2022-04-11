@@ -15,10 +15,9 @@
 ### Clone the repository
 
 ```sh
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
 git clone git@github.com:OSHE-Github/growbot_simulations
 ```
+`If you are having issues cloning this with the above command, make sure your ssh key is added to your account`
 
 If you do not intend to contribute code you can clone with HTTPS instead `git clone https://github.com/OSHE-Github/growbot_simulations.git`
 
@@ -30,12 +29,11 @@ rosdep update
 rosdep install --from-paths src --ignore-src -r -y --rosdistro noetic
 ```
 
-### Install the controllers package needed for simulation
+### Update your bashrc file
 
-```sh
-sudo apt-get update
-sudo apt-get install ros-noetic-ros-controllers
-```
+Add `source /opt/ros/noetic/setup.bash` and `source ~/growbot_simulations/devel/setup.bash` to the end of your ~/.bashrc file.
+
+This can be done by just running `printf "source /opt/ros/noetic/setup.bash\nsource ~/growbot_simulations/devel/setup.bash\n" >> ~/.bashrc` in your terminal.
 
 ### Get the `aruco_ros` dependency
 
@@ -49,26 +47,7 @@ git clone https://github.com/pal-robotics/aruco_ros.git
 First build the project and source the setup file so that the system knows where to look for your build files (i.e. If you do not run the source command in your terminal none of the roslaunch commands will work)
 
 ```sh
-sudo apt-get install python3-catkin-tools
 cd ~/catkin_ws
 catkin_make
-source devel/setup.bash
 ```
-
-### Launch `rviz` to only see robot model and sensor data
-
-```sh
-roslaunch growbot_simulations rviz.launch
-```
-
-### View the ROS nodes and topics as a graph
- 
-```sh
-rqt_graph
-```
-
-### TODO
-- [ ] Add ROS Serial Instructions and example
-- [ ] Add ROS Subscriber Instructions 
-- [ ] Add ROS Publisher Instructions 
 
