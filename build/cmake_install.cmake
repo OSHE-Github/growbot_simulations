@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Release")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -131,8 +131,13 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/david/growbot_simulations/build/gtest/cmake_install.cmake")
+  include("/home/david/growbot_simulations/build/iai_kinect2/iai_kinect2/cmake_install.cmake")
   include("/home/david/growbot_simulations/build/receive_test/cmake_install.cmake")
   include("/home/david/growbot_simulations/build/send_test/cmake_install.cmake")
+  include("/home/david/growbot_simulations/build/iai_kinect2/kinect2_registration/cmake_install.cmake")
+  include("/home/david/growbot_simulations/build/iai_kinect2/kinect2_bridge/cmake_install.cmake")
+  include("/home/david/growbot_simulations/build/iai_kinect2/kinect2_calibration/cmake_install.cmake")
+  include("/home/david/growbot_simulations/build/iai_kinect2/kinect2_viewer/cmake_install.cmake")
 
 endif()
 

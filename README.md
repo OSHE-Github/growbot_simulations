@@ -24,6 +24,7 @@ If you do not intend to contribute code you can clone with HTTPS instead `git cl
 ### Update ROS Dependencies
 
 ```sh
+sudo apt install python3-catkin-tools
 cd ~/catkin_ws
 rosdep update
 rosdep install --from-paths src --ignore-src -r -y --rosdistro noetic

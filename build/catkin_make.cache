@@ -1,2 +1,2 @@
-receive_test:send_test
+iai_kinect2/iai_kinect2:iai_kinect2/kinect2_bridge:iai_kinect2/kinect2_calibration:iai_kinect2/kinect2_registration:iai_kinect2/kinect2_viewer:receive_test:send_test
 -DCATKIN_DEVEL_PREFIX=/home/david/growbot_simulations/devel -DCMAKE_INSTALL_PREFIX=/home/david/growbot_simulations/install -G Unix Makefiles
